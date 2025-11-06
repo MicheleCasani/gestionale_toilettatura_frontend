@@ -5,7 +5,7 @@ const ServiceListHomepage = () => {
         <>
             <div className="col-12">
                 <h2 className="text-center">I nostri Servizi</h2>
-                <div className="text-center mb-4"><small className="text-muted">I prezzi indicati per tariffa oraria</small></div>
+                <div className="text-center mb-4"><small className="text-muted">I prezzi indicati sono a tariffa oraria</small></div>
             </div>
 
             <div className="col-6 col-md-6 col-lg-4 mb-4">

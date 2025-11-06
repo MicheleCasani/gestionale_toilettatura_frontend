@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import NavbarHomepage from "../components/homepage-components/NavbarHomepage.jsx";
 import ServiceListHomepage from "../components/homepage-components/ServiceListHomepage.jsx";
 import WhyUs from "../components/homepage-components/WhyUs.jsx";
