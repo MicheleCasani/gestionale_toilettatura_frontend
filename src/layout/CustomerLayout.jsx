@@ -1,4 +1,4 @@
-import NavbarCustomer from "../components/layout/NavbarCustomer"
+import NavbarCustomer from "../components/customer-components/NavbarCustomer"
 import { Outlet } from "react-router-dom"
 
 const CustomerLayout = () => {
