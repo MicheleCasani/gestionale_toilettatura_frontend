@@ -1,4 +1,57 @@
 /* font */
 body {
-    font-family: "Funnel Sans", sans-serif !important;
+    font-family: "Fraunces", serif !important;
+}
+
+/* sfondo layout generale */
+main {
+    background-color: rgba(255, 249, 233);
+}
+
+/* -------------------------------------------- */
+
+/* classi homepage */
+.image-homepage {
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+}
+
+.navbar-homepage {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+/* -------------------------------------------- */
+
+/* classi riutilizzabili */
+.background-color-light {
+    background-color: rgba(255, 249, 233);
+}
+
+.background-color-dark {
+    background: linear-gradient(90deg, rgba(39, 53, 99) 50%, rgba(252, 92, 63) 100%);
+}
+
+
+/* Button styles */
+.button {
+    background: linear-gradient(90deg, rgba(39, 53, 99) 50%, rgba(252, 92, 63) 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: translateY(-1px) scale(1.03);
+    transition: transform 0.3s;
+}
+
+.button:active {
+    transform: scale(0.99);
 }
