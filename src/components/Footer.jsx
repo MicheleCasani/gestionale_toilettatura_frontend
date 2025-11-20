@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
                 <div className='row'>
                     <div className='col-12 text-center'>
-                        <small className='text-muted'>© 2024 Tutti i diritti riservati. Coccole Canine.</small>
+                        <small className='text-muted'>© 2025 Tutti i diritti riservati. Coccole Canine.</small>
                     </div>
                 </div>
             </footer>
