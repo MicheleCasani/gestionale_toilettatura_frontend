@@ -18,11 +18,17 @@ const NavbarCustomer = () => {
                         {/* Menu collassabile */}
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <div className="navbar-nav ms-auto d-flex flex-column flex-lg-row gap-2">
-                                <button to="/customer/login" className="button mb-2 mb-lg-0 text-center">
+                                <button to="/customer/login" className="button text-center">
                                     DATI PERSONALI
                                 </button>
                                 <button to="/customer/register" className="button text-center">
                                     I MIEI CANI
+                                </button>
+                                <button to="/customer/register" className="button text-center">
+                                    PRENOTAZIONI
+                                </button>
+                                <button to="/customer/register" className="button text-center">
+                                    LOGOUT
                                 </button>
                             </div>
                         </div>
