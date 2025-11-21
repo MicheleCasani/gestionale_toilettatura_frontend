@@ -1,6 +1,25 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import BookingModal from './modal/BookingModal'
+import DataCustomer from './modal/DataCustomer'
+import DogCustomer from './modal/DogCustomer'
 
 const NavbarCustomer = () => {
+    const [showAppointmentsModal, setShowAppointmentsModal] = useState(false)
+    const [showDataModal, setShowDataModal] = useState(false)
+    const [showDogsModal, setShowDogsModal] = useState(false)
+
+    const handleAppointmentsClick = () => {
+        setShowAppointmentsModal(true)
+    }
+
+    const handleDataClick = () => {
+        setShowDataModal(true)
+    }
+
+    const handleDogsClick = () => {
+        setShowDogsModal(true)
+    }
     return (
         <>
             <div className="row p-0 sticky-top ">
@@ -18,16 +37,25 @@ const NavbarCustomer = () => {
                         {/* Menu collassabile */}
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <div className="navbar-nav ms-auto d-flex flex-column flex-lg-row gap-2">
-                                <button to="/customer/login" className="button text-center">
+                                <button
+                                    className="button text-center"
+                                    onClick={handleDataClick}
+                                >
                                     DATI PERSONALI
                                 </button>
-                                <button to="/customer/register" className="button text-center">
+                                <button
+                                    className="button text-center"
+                                    onClick={handleDogsClick}
+                                >
                                     I MIEI CANI
                                 </button>
-                                <button to="/customer/register" className="button text-center">
+                                <button
+                                    className="button text-center"
+                                    onClick={handleAppointmentsClick}
+                                >
                                     PRENOTAZIONI
                                 </button>
-                                <button to="/customer/register" className="button text-center">
+                                <button className="button text-center">
                                     LOGOUT
                                 </button>
                             </div>
@@ -35,6 +63,20 @@ const NavbarCustomer = () => {
                     </div>
                 </nav >
             </div >
+
+            {/* Modali */}
+            <BookingModal
+                show={showAppointmentsModal}
+                onClose={() => setShowAppointmentsModal(false)}
+            />
+            <DataCustomer
+                show={showDataModal}
+                onClose={() => setShowDataModal(false)}
+            />
+            <DogCustomer
+                show={showDogsModal}
+                onClose={() => setShowDogsModal(false)}
+            />
         </>
     )
 }
