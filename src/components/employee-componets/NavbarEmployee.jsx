@@ -1,24 +1,19 @@
+import React from 'react'
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import BookingModal from './modal/BookingModal'
-import DataCustomer from './modal/DataCustomer'
-import DogCustomer from './modal/DogCustomer'
+import ProfileModal from './modal/ProfileModal'
+import CalendarModal from './modal/CalendarModal'
 
-const NavbarCustomer = () => {
-    const [showAppointmentsModal, setShowAppointmentsModal] = useState(false)
-    const [showDataModal, setShowDataModal] = useState(false)
-    const [showDogsModal, setShowDogsModal] = useState(false)
+const NavbarEmployee = () => {
+    const [showProfileModal, setShowProfileModal] = useState(false)
+    const [showCalendarModal, setShowCalendarModal] = useState(false)
 
-    const handleAppointmentsClick = () => {
-        setShowAppointmentsModal(true)
+    const handleProfileClick = () => {
+        setShowProfileModal(true)
     }
 
-    const handleDataClick = () => {
-        setShowDataModal(true)
-    }
-
-    const handleDogsClick = () => {
-        setShowDogsModal(true)
+    const handleCalendarClick = () => {
+        setShowCalendarModal(true)
     }
     return (
         <>
@@ -39,21 +34,27 @@ const NavbarCustomer = () => {
                             <div className="navbar-nav ms-auto d-flex flex-column flex-lg-row gap-2">
                                 <button
                                     className="button text-center"
-                                    onClick={handleDataClick}
+                                    onClick={handleProfileClick}
                                 >
-                                    DATI PERSONALI
+                                    PROFILO
                                 </button>
                                 <button
                                     className="button text-center"
-                                    onClick={handleDogsClick}
+                                    onClick={handleCalendarClick}
                                 >
-                                    I MIEI CANI
+                                    CALENDARIO
                                 </button>
                                 <button
                                     className="button text-center"
-                                    onClick={handleAppointmentsClick}
+                                    onClick={''}
                                 >
-                                    PRENOTAZIONI
+                                    RICHIESTE
+                                </button>
+                                <button
+                                    className="button text-center"
+                                    onClick={''}
+                                >
+                                    CLIENTI
                                 </button>
                                 <button className="button text-center">
                                     LOGOUT
@@ -65,20 +66,16 @@ const NavbarCustomer = () => {
             </div >
 
             {/* Modali */}
-            <BookingModal
-                show={showAppointmentsModal}
-                onClose={() => setShowAppointmentsModal(false)}
+            <ProfileModal
+                show={showProfileModal}
+                onClose={() => setShowProfileModal(false)}
             />
-            <DataCustomer
-                show={showDataModal}
-                onClose={() => setShowDataModal(false)}
-            />
-            <DogCustomer
-                show={showDogsModal}
-                onClose={() => setShowDogsModal(false)}
+            <CalendarModal
+                show={showCalendarModal}
+                onClose={() => setShowCalendarModal(false)}
             />
         </>
     )
 }
 
-export default NavbarCustomer
+export default NavbarEmployee

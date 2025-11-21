@@ -3,7 +3,8 @@ import DefaultLayout from "./layout/DefaultLayout"
 import Homepage from "./pages/Homepage.jsx";
 import CustomerDashboard from "./pages/customer/CustomerDashboard.jsx";
 import CustomerLayout from "./layout/CustomerLayout"
-
+import EmployeeDashboard from "./pages/employee/EmployeeDashboard.jsx";
+import EmployeeLayout from "./layout/EmployeeLayout.jsx";
 
 function App() {
 
@@ -20,7 +21,11 @@ function App() {
             <Route path="/customer" element={<CustomerLayout />}>
               <Route path="dashboard" element={<CustomerDashboard />} />
             </Route>
+          </Route>
 
+          {/* Layout lavoratori autenticati - separato dal DefaultLayout */}
+          <Route path="/employee" element={<EmployeeLayout />}>
+            <Route path="dashboard" element={<EmployeeDashboard />} />
           </Route>
 
         </Routes>

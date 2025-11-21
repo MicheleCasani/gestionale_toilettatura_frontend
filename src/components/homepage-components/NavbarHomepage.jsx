@@ -8,7 +8,7 @@ const NavbarHomepage = () => {
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">
                             <img src="/logo-semplice-di-un.png" alt="" className="image-homepage" />
-                            <span style={{ fontSize: '2rem' }}>COCCOLE CANINE</span>
+                            <span style={{ fontSize: '1rem' }}>COCCOLE CANINE</span>
                         </Link>
 
                         {/* Hamburger button per mobile */}
