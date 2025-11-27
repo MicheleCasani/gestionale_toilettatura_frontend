@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const CalendarModal = ({ show, onClose }) => {
     const [currentWeek, setCurrentWeek] = useState(0) // 0 = settimana corrente
-    
+
     if (!show) return null
 
     // Mock data per gli appuntamenti
@@ -36,15 +36,15 @@ const CalendarModal = ({ show, onClose }) => {
     ]
 
     const workDays = ['Mercoledi', 'Giovedi', 'Venerdi', 'Sabato']
-    
+
     const getWeekDates = (weekOffset) => {
         const today = new Date(2025, 10, 21) // 21 Nov 2025 (giovedì)
         const currentWeekStart = new Date(today)
         currentWeekStart.setDate(today.getDate() - today.getDay() + 3) // Mercoledì
-        
+
         const weekStart = new Date(currentWeekStart)
         weekStart.setDate(currentWeekStart.getDate() + (weekOffset * 7))
-        
+
         return {
             week: `${weekStart.getDate()} - ${weekStart.getDate() + 3}`,
             month: weekStart.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })
@@ -52,7 +52,7 @@ const CalendarModal = ({ show, onClose }) => {
     }
 
     const getServiceBadgeColor = (service) => {
-        switch(service) {
+        switch (service) {
             case 'Bagno completo': return 'bg-primary'
             case 'Taglio pelo': return 'bg-success'
             case 'Tosatura': return 'bg-warning'
@@ -90,7 +90,7 @@ const CalendarModal = ({ show, onClose }) => {
                     <div className="modal-body p-0">
                         {/* Navigazione settimana */}
                         <div className="d-flex justify-content-between align-items-center p-3 border-bottom">
-                            <button 
+                            <button
                                 className="btn btn-outline-primary"
                                 onClick={() => setCurrentWeek(currentWeek - 1)}
                                 disabled={currentWeek <= -4} // Limite: 1 mese indietro
@@ -98,17 +98,12 @@ const CalendarModal = ({ show, onClose }) => {
                                 <i className="fa-solid fa-chevron-left me-1"></i>
                                 Settimana Precedente
                             </button>
-                            
+
                             <div className="text-center">
                                 <h6 className="mb-0">Settimana {weekInfo.week}</h6>
-                                <small className="text-muted">
-                                    {currentWeek === 0 ? 'Settimana Corrente' : 
-                                     currentWeek > 0 ? `+${currentWeek} settimane` : 
-                                     `${currentWeek} settimane`}
-                                </small>
                             </div>
-                            
-                            <button 
+
+                            <button
                                 className="btn btn-outline-primary"
                                 onClick={() => setCurrentWeek(currentWeek + 1)}
                                 disabled={currentWeek >= 12} // Limite: 3 mesi avanti
@@ -141,16 +136,16 @@ const CalendarModal = ({ show, onClose }) => {
                                                     <td key={`${day}-${time}`} className="p-1">
                                                         {appointment ? (
                                                             <div className={`badge ${getServiceBadgeColor(appointment.service)} w-100 text-wrap p-2`}
-                                                                 style={{ fontSize: '0.7rem', lineHeight: '1.2' }}>
+                                                                style={{ fontSize: '0.7rem', lineHeight: '1.2' }}>
                                                                 <div className="fw-bold">{appointment.client}</div>
                                                                 <div>{appointment.service}</div>
                                                                 <div>({appointment.duration})</div>
                                                             </div>
                                                         ) : (
                                                             <div className="w-100 h-100 d-flex align-items-center justify-content-center text-muted"
-                                                                 style={{ minHeight: '35px', cursor: 'pointer', borderRadius: '4px' }}
-                                                                 onMouseEnter={(e) => e.target.style.backgroundColor = '#f8f9fa'}
-                                                                 onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>
+                                                                style={{ minHeight: '35px', cursor: 'pointer', borderRadius: '4px' }}
+                                                                onMouseEnter={(e) => e.target.style.backgroundColor = '#f8f9fa'}
+                                                                onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>
                                                                 <small>Libero</small>
                                                             </div>
                                                         )}

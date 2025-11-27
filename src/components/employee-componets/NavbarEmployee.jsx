@@ -3,10 +3,12 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import ProfileModal from './modal/ProfileModal'
 import CalendarModal from './modal/CalendarModal'
+import RequestsModal from './modal/RequestsModal'
 
 const NavbarEmployee = () => {
     const [showProfileModal, setShowProfileModal] = useState(false)
     const [showCalendarModal, setShowCalendarModal] = useState(false)
+    const [showRequestsModal, setShowRequestsModal] = useState(false)
 
     const handleProfileClick = () => {
         setShowProfileModal(true)
@@ -14,6 +16,10 @@ const NavbarEmployee = () => {
 
     const handleCalendarClick = () => {
         setShowCalendarModal(true)
+    }
+
+    const handleRequestsClick = () => {
+        setShowRequestsModal(true)
     }
     return (
         <>
@@ -46,7 +52,7 @@ const NavbarEmployee = () => {
                                 </button>
                                 <button
                                     className="button text-center"
-                                    onClick={''}
+                                    onClick={handleRequestsClick}
                                 >
                                     RICHIESTE
                                 </button>
@@ -73,6 +79,10 @@ const NavbarEmployee = () => {
             <CalendarModal
                 show={showCalendarModal}
                 onClose={() => setShowCalendarModal(false)}
+            />
+            <RequestsModal
+                show={showRequestsModal}
+                onHide={() => setShowRequestsModal(false)}
             />
         </>
     )

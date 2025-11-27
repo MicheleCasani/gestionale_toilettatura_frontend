@@ -21,7 +21,7 @@ const ProfileModal = ({ show, onClose }) => {
                     <div className="modal-body">
                         <div className="row">
                             {/* Info personali */}
-                            <div className="col-md-6">
+                            <div className="col-12">
                                 <div className="card h-100">
                                     <div className="card-header">
                                         <h6 className="mb-0">Informazioni Personali</h6>
